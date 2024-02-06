@@ -85,6 +85,38 @@ router.delete('/:id', (req, res) => {
     }
 })
 
+router.put('/:id', (req, res) => {
+    console.log('in employee UPDATE route')
+    console.log('req.body', req.body)
+if (req.isAuthenticated()) {
+    const employeeId = req.params.id;
+    const firstName = req.body.first_name
+    const lastName = req.body.last_name
+    const notes = req.body.notes
+        
+    
+    const queryText =`
+    UPDATE "employees" 
+    SET 
+    "first_name"=$1,
+    "last_name" =$2,
+    "notes" =$3
+    
 
+    WHERE "id" = $4;
+    `
+   queryParams =[firstName,lastName,notes,employeeId]
+    pool 
+        .query(queryText, queryParams)
+        .then((result)=> {
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            console.log('error updating employee', err)
+        })
+    }else {
+        sendStatus(403)
+    }
+})
 
 module.exports = router;
