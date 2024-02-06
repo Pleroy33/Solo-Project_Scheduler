@@ -19,6 +19,8 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import AddEmployee from '../AddEmployee/AddEmployee';
+import CreateSchedule from '../CreateSchedule/CreateSchedule';
 
 import './App.css';
 
@@ -59,6 +61,18 @@ function App() {
           >
             <UserPage />
           </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/addemployee">
+              <AddEmployee />
+            </ProtectedRoute>
+            <ProtectedRoute
+            exact
+            path="/createschedule">
+              <CreateSchedule />
+            </ProtectedRoute>
+            
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
