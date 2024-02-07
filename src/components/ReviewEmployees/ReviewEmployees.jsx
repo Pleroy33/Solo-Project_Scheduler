@@ -14,9 +14,10 @@ function ReviewEmployees() {
             type:'FETCH_EMPLOYEES'})
     },[])
 
-    // const handleAddAnotherClick= () => {
-    //     history.push('/addemployee')
-    // }
+   const handleDeleteEmployee =(id) => { 
+    console.log('inside handleDeleteEmplyee')
+    dispatch({type: 'DELETE_EMPLOYEE', payload: id})
+   }
     return (
     <>
     <h1>Employee List</h1>
@@ -25,10 +26,10 @@ function ReviewEmployees() {
     <table>
         <thead>
   <tr>
-    <td>First Name</td>
-    <td>Last Name</td>
-    <td>Edit Employee</td>
-    <td>Delete Employee</td>
+    <th scope='col'>First Name</th>
+    <th scope='col'>Last Name</th>
+    <th scope='col'>Edit Employee</th>
+    <th scope='col'>Delete Employee</th>
   </tr>
   </thead>
   <tbody>
@@ -37,7 +38,8 @@ function ReviewEmployees() {
         return(<tr key={employee.id}>
          <td>{employee.first_name}</td>
          <td>{employee.last_name}</td>
-         <td>{employee.notes}</td>
+         <td><button>Edit Employee</button></td>
+         <td><button onClick={(event) => handleDeleteEmployee(event.target.value)} value={employee.id}>Delete Employee</button></td>
        </tr>
        );
     })}
