@@ -13,7 +13,9 @@ function ReviewEmployees() {
         dispatch({
             type:'FETCH_EMPLOYEES'})
     },[])
-
+    const handleEditEmployee = (id) => {
+        console.log('inisde handleEditEmployee')
+    }
    const handleDeleteEmployee =(id) => { 
     console.log('inside handleDeleteEmplyee')
     dispatch({type: 'DELETE_EMPLOYEE', payload: id})
@@ -38,7 +40,7 @@ function ReviewEmployees() {
         return(<tr key={employee.id}>
          <td>{employee.first_name}</td>
          <td>{employee.last_name}</td>
-         <td><button>Edit Employee</button></td>
+         <td><button onClick={(event) => handleEditEmployee(event.target.value)} value={employee.id}>Edit Employee</button></td>
          <td><button onClick={(event) => handleDeleteEmployee(event.target.value)} value={employee.id}>Delete Employee</button></td>
        </tr>
        );

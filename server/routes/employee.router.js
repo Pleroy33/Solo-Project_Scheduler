@@ -84,7 +84,30 @@ router.delete('/:id', (req, res) => {
         sendstatus(403)
     }
 })
+router.get('/:id', (req, res) => {
+    // GET route code here
+    console.log('in employee get by id route')
+    console.log('isAuthenicated', req.isAuthenticated)
+    console.log('user,', req.user)
+    if (req.isAuthenticated()) {
+        const employeeId = [req.params.id]
+        const queryText = `
+    select * from "employees"
+    WHERE "id" = $1;
+    `
 
+        pool.query(queryText, employeeId)
+            .then(result => {
+                res.send(result.rows);
+            })
+            .catch(err => {
+                console.log('Error getting employees', err)
+                res.sendStatus(500)
+            })
+    } else {
+        res.sendStatus(403)
+    }
+});
 router.put('/:id', (req, res) => {
     console.log('in employee UPDATE route')
     console.log('req.body', req.body)

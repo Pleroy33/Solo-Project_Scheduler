@@ -1,7 +1,7 @@
 import axios from "axios";
 import { takeLatest, put, take } from "redux-saga/effects";
 
-function* fetchEmployees(action) {
+function* fetchAllEmployees(action) {
     console.log('in fetchEmployees,', action)
     try {
         const employees = yield axios.get('api/employee')
@@ -34,10 +34,20 @@ function* deleteEmployee(action) {
         console.log('deleteEmployee Error,',error)
     }
 }
+function* fetchOneEmployee(action) {
+    console.log('in fetchOneEmployees', action)
+    try {
+        const getOneEmp = yield axios.get(`api/employee/${action.payload}`)
+        yield put({ type: "FETCH_ONE_EMPLOYEE" })
+    } catch (error) {
+        console.log('deleteEmployee Error,',error)
+    }
+}
 function* employeesSaga() {
-    yield takeLatest('FETCH_EMPLOYEES', fetchEmployees)
+    yield takeLatest('FETCH_EMPLOYEES', fetchAllEmployees)
     yield takeLatest('DELETE_EMPLOYEE', deleteEmployee)
     yield takeLatest('POST_EMPLOYEE', addEmployee);
+    yield takeLatest('FETCH_ONE_EMPLOYEE', fetchOneEmployee)
 }
 
 export default employeesSaga
