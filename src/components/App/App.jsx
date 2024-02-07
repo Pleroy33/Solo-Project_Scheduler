@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AddEmployee from '../AddEmployee/AddEmployee';
+import ReviewEmployees from '../ReviewEmployees/ReviewEmployees';
 import CreateSchedule from '../CreateSchedule/CreateSchedule';
 
 import './App.css';
@@ -66,6 +67,12 @@ function App() {
             exact
             path="/addemployee">
               <AddEmployee />
+            </ProtectedRoute>
+
+            <ProtectedRoute
+              exact 
+              path = "/reviewemployees">
+                <ReviewEmployees/>
             </ProtectedRoute>
             <ProtectedRoute
             exact
