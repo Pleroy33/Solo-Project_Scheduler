@@ -7,7 +7,7 @@ function* fetchEmployees(action){
         const employees = yield axios.get('api/employee')
         yield put({type:'SET_EMPLOYEES', payload: employees.data})
     }catch (error)  {
-        console.log(error)
+        console.log('fetch emeployees,', error)
     }
 }
 

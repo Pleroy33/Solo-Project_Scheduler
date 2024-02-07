@@ -23,7 +23,7 @@ function AddEmployee() {
         setInput({first_name: '', last_name: '', notes: ''})
         // setLastName('');
         // setNotes('')
-        // history.push('/ReviewEmployees')
+        history.push('/reviewemployees')
     }
     return (
         <>

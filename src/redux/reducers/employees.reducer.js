@@ -4,3 +4,5 @@ if (action.type === 'SET_EMPLOYEES') {
 }
   return state
 }
+
+export default employees
