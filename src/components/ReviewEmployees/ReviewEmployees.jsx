@@ -15,6 +15,7 @@ function ReviewEmployees() {
     },[])
     const handleEditEmployee = (id) => {
         console.log('inisde handleEditEmployee')
+        dispatch({ type:  'GET_ONE_EMPLOYEE', payload: id})
     }
    const handleDeleteEmployee =(id) => { 
     console.log('inside handleDeleteEmplyee')

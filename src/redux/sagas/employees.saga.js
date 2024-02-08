@@ -2,7 +2,7 @@ import axios from "axios";
 import { takeLatest, put, take } from "redux-saga/effects";
 
 function* fetchAllEmployees(action) {
-    console.log('in fetchEmployees,', action)
+    console.log('in fetchALLEmployees,', action)
     try {
         const employees = yield axios.get('api/employee')
         yield put({ type: 'SET_EMPLOYEES', payload: employees.data })
@@ -11,7 +11,7 @@ function* fetchAllEmployees(action) {
     }
 }
 
-// add_employee Saga: will be fired on "ADD_EMPLOYEE" actions
+// add_employee Saga: will be fired on "FETCH_EMPLOYEE" actions
 function* addEmployee(action) {
     try {
         //send the employee data with a POST request
@@ -34,20 +34,20 @@ function* deleteEmployee(action) {
         console.log('deleteEmployee Error,',error)
     }
 }
-function* fetchOneEmployee(action) {
+function* getOneEmployee(action) {
     console.log('in fetchOneEmployees', action)
     try {
         const getOneEmp = yield axios.get(`api/employee/${action.payload}`)
-        yield put({ type: "FETCH_ONE_EMPLOYEE" })
+        yield put({ type: "SET_ONE_EMPLOYEE" })
     } catch (error) {
-        console.log('deleteEmployee Error,',error)
+        console.log('fetchOneEmployee Error,',error)
     }
 }
 function* employeesSaga() {
     yield takeLatest('FETCH_EMPLOYEES', fetchAllEmployees)
     yield takeLatest('DELETE_EMPLOYEE', deleteEmployee)
     yield takeLatest('POST_EMPLOYEE', addEmployee);
-    yield takeLatest('FETCH_ONE_EMPLOYEE', fetchOneEmployee)
+    yield takeLatest('GET_ONE_EMPLOYEE', getOneEmployee)
 }
 
 export default employeesSaga
