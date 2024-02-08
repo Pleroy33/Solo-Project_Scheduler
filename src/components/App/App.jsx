@@ -19,10 +19,11 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import AddEmployee from '../AddEmployee/AddEmployee';
+import AddEmployee from '../AddEmployeeForm/AddEmployeeForm';
 import ReviewEmployees from '../ReviewEmployees/ReviewEmployees';
 import CreateSchedule from '../CreateSchedule/CreateSchedule';
 import ChooseDay from '../ChooseDay/ChooseDay'
+import ScheduleDay from '../ScheduleDayForm/ScheduleDayForm';
 
 import './App.css';
 
@@ -86,6 +87,12 @@ function App() {
             exact
             path="/chooseday">
               <ChooseDay />
+            </ProtectedRoute>
+
+            <ProtectedRoute
+            exact
+            path="/scheduleday">
+              <ScheduleDay />
             </ProtectedRoute>
             
 
