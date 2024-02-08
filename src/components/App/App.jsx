@@ -24,6 +24,7 @@ import ReviewEmployees from '../ReviewEmployees/ReviewEmployees';
 import CreateSchedule from '../CreateSchedule/CreateSchedule';
 import ChooseDay from '../ChooseDay/ChooseDay'
 import ScheduleDay from '../ScheduleDayForm/ScheduleDayForm';
+import WeekScheduleReview from '../WeekScheduleReview/WeekScheduleReview';
 
 import './App.css';
 
@@ -93,6 +94,12 @@ function App() {
             exact
             path="/scheduleday">
               <ScheduleDay />
+            </ProtectedRoute>
+
+            <ProtectedRoute
+            exact
+            path="/weekschedulereview">
+              <WeekScheduleReview />
             </ProtectedRoute>
             
 

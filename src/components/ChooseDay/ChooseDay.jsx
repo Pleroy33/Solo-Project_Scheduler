@@ -33,7 +33,7 @@ function ChooseDay() {
       </div>
 
       <div>
-      <button type='button' onClick={() => { history.push('scheduleday') }}>View Schedule</button>
+      <button type='button' onClick={() => { history.push('reviewschedule/{placeholder}') }}>View Schedule</button>
 
       </div>
 

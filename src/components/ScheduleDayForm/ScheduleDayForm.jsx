@@ -29,7 +29,7 @@ function ScheduleDay(props) {
                <header className='Add-shift-header'>
                 <h1>Add Employee</h1>
                </header>
-            <div className='Employee-form'>
+            <div className='Shift-form'>
                 <form onSubmit={handleSubmit}>
                     <input type="text" placeholder='First Name' value={input.first_name} onChange={(event)=> setInput({...input, first_name: event.target.value})} />
                     <input type="text" placeholder='Start Shift' value={input.start_shift} onChange={(event) => setInput({...input, start_shift: event.target.value})} />
