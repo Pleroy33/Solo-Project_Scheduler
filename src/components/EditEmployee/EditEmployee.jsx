@@ -6,7 +6,7 @@ function EditEmployee() {
 
     return (
         <>
-        <div className='Edit-employee'>
+        {/* <div className='Edit-employee'>
                <header className='add-employee-header'>
                 <h1>Edit Empliyee</h1>
                </header>
@@ -19,6 +19,6 @@ function EditEmployee() {
                     <button type ='submit'>Accept</button>
                 </form>
             </div>
-            </>
+            </> */}
     )
     }
