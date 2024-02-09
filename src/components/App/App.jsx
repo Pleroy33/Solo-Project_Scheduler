@@ -20,7 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
-import AddEmployee from '../AddEmployee/AddEmployee';
+import AddEmployee from '../AddEmployeeForm/AddEmployee';
 import EditEmployee from '../EditEmployee/EditEmployee';
 
 
