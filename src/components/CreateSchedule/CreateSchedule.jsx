@@ -10,6 +10,10 @@ function CreateSchedule() {
   // a default value of 'Functional Component'
   const store = useSelector((store) => store);
 
+
+
+  const history = useHistory();
+
   
 
   return (

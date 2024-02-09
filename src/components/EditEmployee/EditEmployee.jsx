@@ -19,6 +19,7 @@ function EditEmployee() {
     event.preventDefault();
     console.log('editEmployee handleEditFirst', event.target.value);
         dispatch({
+
             type: 'EDIT_EMPLOYEE',
             payload: { property: 'first_name', value: event.target.value }
         })
@@ -58,12 +59,19 @@ function EditEmployee() {
 
     }
 
+//             type:'GET_ONE_EMPLOYEE'})
+//     },[])
+
+
+
     return (
+
 
         <div className='Edit-employee'>
             <header className='add-employee-header'>
                 <h1>Edit Employee</h1>
             </header>
+
 
             <div className='Employee-form'>
                 <form onSubmit={handleSubmit}>
@@ -74,8 +82,11 @@ function EditEmployee() {
                     <button type='submit'>Accept</button>
                 </form>
             </div>
+
         </div>
     )
 }
 
 export default EditEmployee
+
+

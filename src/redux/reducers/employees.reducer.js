@@ -1,4 +1,6 @@
-const employees = (state = [], action) =>{
+// import { combineReducers } from "redux"
+
+const fetchEmployees = (state = [], action) =>{
 if (action.type === 'SET_EMPLOYEES') {
     return action.payload 
 }
@@ -6,7 +8,14 @@ if (action.type === 'SET_EMPLOYEES') {
 }
 
 
+
+
+
 // make one object that has keys loginMessage, registrationMessage
 // these will be on the redux state at:
 // state.errors.loginMessage and state.errors.registrationMessage
-export default employees
+export default fetchEmployees
+// ({
+//   ,
+//   fetchOneEmployee,
+// });

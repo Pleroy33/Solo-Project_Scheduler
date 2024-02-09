@@ -14,6 +14,7 @@ function ReviewEmployees() {
         dispatch({
             type:'FETCH_EMPLOYEES'})
     },[])
+
     // const handleEditEmployee = (employee) => {
     //     console.log('inisde handleEditEmployee',employee)
     //     history.push('/editemployee')
@@ -23,6 +24,16 @@ function ReviewEmployees() {
   //   console.log('inside handleDeleteEmplyee')
   //   dispatch({type: 'DELETE_EMPLOYEE', payload: id})
   //  }
+
+//     const handleEditEmployee = (id) => {
+//         console.log('inisde handleEditEmployee')
+//         dispatch({ type:  'GET_ONE_EMPLOYEE', payload: id})
+//     }
+//    const handleDeleteEmployee =(id) => { 
+//     console.log('inside handleDeleteEmplyee')
+//     dispatch({type: 'DELETE_EMPLOYEE', payload: id})
+//    }
+
     return (
     <div>
     <h1>Employee List</h1>
