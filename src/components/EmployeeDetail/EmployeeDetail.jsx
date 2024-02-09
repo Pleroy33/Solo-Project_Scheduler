@@ -14,7 +14,7 @@ function EmployeeDetail({employee}) {
        }
        const setEditEmployee = () => {
         console.log('inside handleEditEmployee',employee)
-        dispatch({type: 'SET_EDIT_EMPlOYEE', payload: employee})
+        dispatch({type: 'SET_EDIT_EMPLOYEE', payload: employee})
         history.push('/editemployee')
 
     }
