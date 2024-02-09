@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import EmployeeDetail from "../EmployeeDetail/EmployeeDetail";
 
 function ReviewEmployees() {
     console.log("inside reviewEmployees")
@@ -13,17 +14,17 @@ function ReviewEmployees() {
         dispatch({
             type:'FETCH_EMPLOYEES'})
     },[])
-    const handleEditEmployee = (employee) => {
-        console.log('inisde handleEditEmployee')
-        history.push('/editemployee')
+    // const handleEditEmployee = (employee) => {
+    //     console.log('inisde handleEditEmployee',employee)
+    //     history.push('/editemployee')
 
-    }
-   const handleDeleteEmployee =(id) => { 
-    console.log('inside handleDeleteEmplyee')
-    dispatch({type: 'DELETE_EMPLOYEE', payload: id})
-   }
+    // }
+  //  const handleDeleteEmployee =(id) => { 
+  //   console.log('inside handleDeleteEmplyee')
+  //   dispatch({type: 'DELETE_EMPLOYEE', payload: id})
+  //  }
     return (
-    <>
+    <div>
     <h1>Employee List</h1>
     <section className="employeeList">
 
@@ -38,14 +39,16 @@ function ReviewEmployees() {
   </thead>
   <tbody>
     {employees.map(employee => {
-        
-        return(<tr key={employee.id}>
-         <td>{employee.first_name}</td>
-         <td>{employee.last_name}</td>
-         <td><button onClick={(event) => handleEditEmployee(event.target.value)} value={employee}>Edit Employee</button></td>
-         <td><button onClick={(event) => handleDeleteEmployee(event.target.value)} value={employee.id}>Delete Employee</button></td>
-       </tr>
-       );
+        return (
+          <EmployeeDetail key={employee.id} employee={employee} />
+        )
+      //   return(<tr key={employee.id}>
+      //    <td>{employee.first_name}</td>
+      //    <td>{employee.last_name}</td>
+      //    <td><button onClick={(event) => handleEditEmployee(event.target.value)} value={employee}>Edit Employee</button></td>
+      //    <td><button onClick={(event) => handleDeleteEmployee(event.target.value)} value={employee.id}>Delete Employee</button></td>
+      //  </tr>
+       
     })}
   
   
@@ -54,7 +57,7 @@ function ReviewEmployees() {
 </section>
 
 <button type ='button' onClick={()=>{history.push('addemployee')}}>Add Another Employee</button>  <button type ='button'onClick={()=>{history.push('createschedule')}}>Accept</button>
-    </>
+</div>
     )
 
 }
