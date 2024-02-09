@@ -52,6 +52,7 @@ function EditEmployee() {
         .then(response => {
             console.log("Success Sending Employee Update")
             dispatch({type: 'EDIT_CLEAR'})
+            history.push('/reviewemployees')
         }).catch(error => {
             console.log("Error sending employee update:", error)
         })
