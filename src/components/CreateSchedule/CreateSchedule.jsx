@@ -56,8 +56,7 @@ function CreateSchedule() {
         <p>{dateFromStr.weekNumber}</p>
         
       </div>
-      <button type='button' onClick={(() => { getThisWeek() })}>Test</button>
-      <button type='button' onClick={() => { history.push(`reviewschedule/${(dateFromStr.toFormat('MM-dd-yyyy'))}`) }}>View Schedule</button>
+      <button type='button' onClick={() => { history.push(`weekschedulereview/${(dateFromStr.toFormat('MM-dd-yyyy'))}`) }}>View Schedule</button>
 
       <button type='button' onClick={() => { history.push(`chooseday/${(dateFromStr.toFormat('MM-dd-yyyy'))}`) }}>Accept</button>
 

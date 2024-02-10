@@ -85,13 +85,13 @@ function App() {
 
             <ProtectedRoute
               exact 
-              path = "/reviewemployees">
+              path = "/reviewemployees/">
                 <ReviewEmployees/>
             </ProtectedRoute>
             
             <ProtectedRoute
             exact
-            path="/createschedule">
+            path="/createschedule/">
               <CreateSchedule />
             </ProtectedRoute>
             
@@ -109,7 +109,7 @@ function App() {
 
             <ProtectedRoute
             exact
-            path="/weekschedulereview">
+            path="/weekschedulereview/:date">
               <WeekScheduleReview />
             </ProtectedRoute>
             
