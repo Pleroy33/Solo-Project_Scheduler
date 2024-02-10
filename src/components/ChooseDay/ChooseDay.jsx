@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
@@ -6,12 +6,13 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 // value setup. When making a new component be sure to replace the
 // component name TemplateFunction with the name for the new component.
 function ChooseDay() {
+  
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
   const store = useSelector((store) => store);
   console.log('on ChooseDay Schedule');
   const history = useHistory();
-
+  
   return (
     <>
       <div>
@@ -33,7 +34,7 @@ function ChooseDay() {
       </div>
 
       <div>
-      <button type='button' onClick={() => { history.push('reviewschedule/{placeholder}') }}>View Schedule</button>
+      <button type='button' onClick={() => { history.push('reviewschedule/{placeholder}') }}>Return to create schedule</button>
 
       </div>
 

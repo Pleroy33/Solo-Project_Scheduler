@@ -97,7 +97,7 @@ function App() {
             
             <ProtectedRoute
             exact
-            path="/chooseday">
+            path="/chooseday/:date">
               <ChooseDay />
             </ProtectedRoute>
 
