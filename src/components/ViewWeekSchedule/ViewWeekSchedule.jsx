@@ -52,7 +52,7 @@ function ViewWeekSchedule() {
                 </table>
             </section>
 
-            <button type='button' onClick={() => { history.push('addemployee') }}>Add Another Employee</button>  <button type='button' onClick={() => { history.push('createschedule') }}>Accept</button>
+            {/* <button type='button' onClick={() => { history.push('addemployee') }}>Add Another Employee</button>  <button type='button' onClick={() => { history.push('createschedule') }}>Accept</button> */}
         </div>
     )
 
