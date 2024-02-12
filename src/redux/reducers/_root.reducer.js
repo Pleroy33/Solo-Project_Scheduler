@@ -4,6 +4,7 @@ import user from './user.reducer';
 import employees from './employees.reducer' 
 
 import editEmployee from './editEmployee.reducer';
+import setWeeks from './setWeeks.reducer';
 
 
 // rootReducer is the primary reducer for our entire project
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   employees,
 
-  editEmployee
+  editEmployee,
+  setWeeks
 
 });
 

@@ -4,6 +4,8 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 // import employeeSaga from './postemployee';
 import employeesSaga from './employees.saga';
+import fetchAllWeeks from './weeks.saga';
+
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -17,7 +19,8 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     // employeeSaga(),
-    employeesSaga()
+    employeesSaga(),
+    fetchAllWeeks 
     
   ]);
 }
