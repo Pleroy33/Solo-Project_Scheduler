@@ -63,7 +63,35 @@ router.post('/', (req, res) => {
   }
 })
 
+router.get('/:id', (req, res) => {
+    // GET route code here
+    console.log('in employee get by id route')
+    console.log('isAuthenicated', req.isAuthenticated)
+    console.log('user,', req.user)
+    if (req.isAuthenticated()) {
+        const weekId = req.params.id
+        const queryParams = [
+            weekId
+        ]
+        
+        const queryText = `
+    select * from "weeks"
+    WHERE "id" = $1 
 
+    `
+
+        pool.query(queryText, queryParams)
+            .then(result => {
+                res.send(result.rows);
+            })
+            .catch(err => {
+                console.log('Error getting employees', err)
+                res.sendStatus(500)
+            })
+    } else {
+        res.sendStatus(403)
+    }
+});
 
 
 

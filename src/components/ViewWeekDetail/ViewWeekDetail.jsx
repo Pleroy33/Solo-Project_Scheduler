@@ -5,28 +5,22 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 function ViewWeekDetail({week}) {
     const dispatch = useDispatch();
     const history = useHistory();
+    
+const handleViewWeekOnClick = () => {
+    console.log('inside viewweek click', week.id)
+    history.push(`/viewweekschedule/${week.id}`)
 
-    console.log('Weekof:', week )
+}
+    console.log('Weekof:', week.id )
 
-    // const handleDeleteEmployee =(id) => { 
-    //     console.log('inside handleDeleteEmplyee')
-    //     dispatch({type: 'DELETE_EMPLOYEE', payload: id})
-    //    }
-    //    const setEditEmployee = () => {
-    //     console.log('inside handleEditEmployee',employee)
-    //     dispatch({type: 'SET_EDIT_EMPLOYEE', payload: employee})
-    //     history.push('/editemployee')
-
-    // }
+    
 
 return (
 
    
     <tr key={week.id}>
         <td>{week.start_week}</td>
-        {/* <td>{employee.last_name}</td> */}
-        <td><button onClick={console.log('')}>View Week</button></td>
-        {/* <td><button onClick={() => handleDeleteEmployee(employee.id)} >Delete Employee</button></td> */}
+        <td><button onClick={handleViewWeekOnClick}>View Week</button></td>
     </tr>
 )
 }

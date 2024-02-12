@@ -10,8 +10,19 @@ function* fetchAllWeeks(action) {
         console.log('fetch weeks,', error)
     }
 }
+
+function* getOneWeek(action) {
+    console.log('in fetchOneEmployees', action)
+    try {
+        const week = yield axios.get(`api/scheduleweek/${action.payload}`)
+        yield put({ type: "SET_ONE_WEEK", payload: week.data })
+    } catch (error) {
+        console.log('getOneEmployee Error,',error)
+    }
+}
 function* weeksSaga() {
     yield takeLatest('FETCH_WEEKS', fetchAllWeeks)
+    yield takeLatest('FETCH_ONE_WEEK', getOneWeek)
     
 }
 
