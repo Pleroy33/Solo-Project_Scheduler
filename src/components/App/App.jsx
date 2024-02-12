@@ -12,25 +12,20 @@ import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-
 import AddEmployee from '../AddEmployeeForm/AddEmployee';
 import EditEmployee from '../EditEmployee/EditEmployee';
-
-
-
 import ReviewEmployees from '../ReviewEmployees/ReviewEmployees';
 import CreateSchedule from '../CreateSchedule/CreateSchedule';
 import ChooseDay from '../ChooseDay/ChooseDay'
 import ScheduleDay from '../ScheduleDayForm/ScheduleDayForm';
 import WeekScheduleReview from '../WeekScheduleReview/WeekScheduleReview';
-
+import ViewWeeks from '../ViewWeeks/ViewWeeks';
 import './App.css';
 
 function App() {
@@ -113,6 +108,11 @@ function App() {
               <WeekScheduleReview />
             </ProtectedRoute>
             
+            <ProtectedRoute
+            exact
+            path= "/viewweeks/">
+              <ViewWeeks/>
+            </ProtectedRoute>
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage

@@ -1,13 +1,14 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import ViewWeekDetail from "../ViewWeekDetail/ViewWeekDetail";
 
 function ViewWeeks() {
     console.log("inside ViewWeeks Component")
     const dispatch =useDispatch();
     const history = useHistory()
-    const weeks = useSelector(store => store.weeks)
-    console.log('full store', weeks)
+    const weeks = useSelector(store => store.setWeeks)
+    console.log('store.weeks', weeks)
 
     useEffect(()=> {
         dispatch({
@@ -33,7 +34,7 @@ function ViewWeeks() {
   <tbody>
     {weeks.map(week => {
         return (
-          <EmployeeDetail key={employee.id} employee={employee} />
+          <ViewWeekDetail key={week.id} week={week} />
         )
       //   return(<tr key={employee.id}>
       //    <td>{employee.first_name}</td>
@@ -49,9 +50,9 @@ function ViewWeeks() {
 </table>
 </section>
 
-<button type ='button' onClick={()=>{history.push('addemployee')}}>Add Another Employee</button>  <button type ='button'onClick={()=>{history.push('createschedule')}}>Accept</button>
+{/* <button type ='button' onClick={()=>{history.push('addemployee')}}>Add Another Employee</button>  <button type ='button'onClick={()=>{history.push('createschedule')}}>Accept</button> */}
 </div>
     )
 
 }
-export default ReviewEmployees
+export default ViewWeeks

@@ -4,7 +4,7 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 // import employeeSaga from './postemployee';
 import employeesSaga from './employees.saga';
-import fetchAllWeeks from './weeks.saga';
+import weeksSaga from './weeks.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -20,7 +20,7 @@ export default function* rootSaga() {
     userSaga(),
     // employeeSaga(),
     employeesSaga(),
-    fetchAllWeeks 
+    weeksSaga()
     
   ]);
 }
