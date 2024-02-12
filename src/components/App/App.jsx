@@ -24,8 +24,10 @@ import ReviewEmployees from '../ReviewEmployees/ReviewEmployees';
 import CreateSchedule from '../CreateSchedule/CreateSchedule';
 import ChooseDay from '../ChooseDay/ChooseDay'
 import ScheduleDay from '../ScheduleDayForm/ScheduleDayForm';
-import WeekScheduleReview from '../WeekScheduleReview/WeekScheduleReview';
+// import WeekScheduleReview from '../WeekScheduleReview/WeekScheduleReview';
+import ViewWeekSchedule from '../ViewWeekSchedule/ViewWeekSchedule';
 import ViewWeeks from '../ViewWeeks/ViewWeeks';
+import ViewWeekDetail from '../ViewWeekDetail/ViewWeekDetail';
 import './App.css';
 
 function App() {
@@ -102,17 +104,34 @@ function App() {
               <ScheduleDay />
             </ProtectedRoute>
 
-            <ProtectedRoute
+            {/* <ProtectedRoute
             exact
             path="/weekschedulereview/:date">
               <WeekScheduleReview />
             </ProtectedRoute>
-            
+             */}
+            <ProtectedRoute
+            exact
+            path= "/viewweekschedule/:id">
+              <ViewWeekSchedule/>
+            </ProtectedRoute>
+
             <ProtectedRoute
             exact
             path= "/viewweeks/">
               <ViewWeeks/>
             </ProtectedRoute>
+
+            <ProtectedRoute
+            exact
+            path= "/viewweekdetail/">
+              <ViewWeekDetail/>
+            </ProtectedRoute>
+
+
+            
+
+            
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage

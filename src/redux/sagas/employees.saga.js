@@ -40,7 +40,7 @@ function* getOneEmployee(action) {
         const getOneEmp = yield axios.get(`api/employee/${action.payload}`)
         yield put({ type: "SET_ONE_EMPLOYEE" })
     } catch (error) {
-        console.log('fetchOneEmployee Error,',error)
+        console.log('getOneEmployee Error,',error)
     }
 }
 function* employeesSaga() {

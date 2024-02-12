@@ -5,6 +5,7 @@ import employees from './employees.reducer'
 
 import editEmployee from './editEmployee.reducer';
 import setWeeks from './setWeeks.reducer';
+import setOneWeek from './setOneWeek.reducer';
 
 
 // rootReducer is the primary reducer for our entire project
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
   employees,
 
   editEmployee,
-  setWeeks
+  setWeeks,
+  setOneWeek
 
 });
 

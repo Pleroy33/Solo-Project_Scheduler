@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function WeekScheduleReview() {
-    console.log("inside reviewEmployees")
+    console.log("inside ")
     const dispatch =useDispatch();
     const history = useHistory()
     const shifts = useSelector(store => store)
