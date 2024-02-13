@@ -25,9 +25,10 @@ import CreateSchedule from '../CreateSchedule/CreateSchedule';
 import ChooseDay from '../ChooseDay/ChooseDay'
 import ScheduleDayForm from '../ScheduleDayForm/ScheduleDayForm';
 import WeekScheduleReview from '../WeekScheduleReview/WeekScheduleReview';
-import ViewWeekSchedule from '../ViewWeekSchedule/ViewWeekSchedule';
+import ViewWeekSchedule from '../ViewWeekDetail/ViewWeekDetail';
 import ViewWeeks from '../ViewWeeks/ViewWeeks';
-import ViewWeekDetail from '../ViewWeekDetail/ViewWeekDetail';
+import ViewWeekDetail from '../ViewWeek/ViewWeek';
+import EditShift from '../EditShift/EditShift';
 import './App.css';
 
 function App() {
@@ -71,67 +72,71 @@ function App() {
           <ProtectedRoute
             exact
             path="/addemployee">
-              <AddEmployee />
-            </ProtectedRoute>
+            <AddEmployee />
+          </ProtectedRoute>
 
-            <ProtectedRoute
-              exact 
-              path = "/editemployee">
-                <EditEmployee/>
-            </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/editemployee">
+            <EditEmployee />
+          </ProtectedRoute>
 
-            <ProtectedRoute
-              exact 
-              path = "/reviewemployees/">
-                <ReviewEmployees/>
-            </ProtectedRoute>
-            
-            <ProtectedRoute
+          <ProtectedRoute
+            exact
+            path="/reviewemployees/">
+            <ReviewEmployees />
+          </ProtectedRoute>
+
+          <ProtectedRoute
             exact
             path="/createschedule/">
-              <CreateSchedule />
-            </ProtectedRoute>
-            
-            <ProtectedRoute
+            <CreateSchedule />
+          </ProtectedRoute>
+
+          <ProtectedRoute
             exact
             path="/chooseday/:date/:date2">
-              <ChooseDay />
-            </ProtectedRoute>
+            <ChooseDay />
+          </ProtectedRoute>
 
-            <ProtectedRoute
+          <ProtectedRoute
             exact
             path="/scheduledayform/:dayId">
-              <ScheduleDayForm />
-            </ProtectedRoute>
+            <ScheduleDayForm />
+          </ProtectedRoute>
 
-            <ProtectedRoute
+          <ProtectedRoute
             exact
             path="/weekschedulereview/:date">
-              <WeekScheduleReview />
-            </ProtectedRoute>
-            
-            <ProtectedRoute
+            <WeekScheduleReview />
+          </ProtectedRoute>
+
+          <ProtectedRoute
             exact
-            path= "/viewweekschedule/:id">
-              <ViewWeekSchedule/>
-            </ProtectedRoute>
+            path="/viewweekschedule/:id">
+            <ViewWeekSchedule />
+          </ProtectedRoute>
 
-            <ProtectedRoute
+          <ProtectedRoute
             exact
-            path= "/viewweeks/">
-              <ViewWeeks/>
-            </ProtectedRoute>
+            path="/viewweeks/">
+            <ViewWeeks />
+          </ProtectedRoute>
 
-            <ProtectedRoute
+          <ProtectedRoute
             exact
-            path= "/viewweekdetail/">
-              <ViewWeekDetail/>
-            </ProtectedRoute>
+            path="/viewweekdetail/">
+            <ViewWeekDetail />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/editshift/">
+            <EditShift />
+          </ProtectedRoute>
 
 
-            
 
-            
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
