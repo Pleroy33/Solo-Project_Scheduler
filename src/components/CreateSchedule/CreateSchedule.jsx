@@ -91,7 +91,7 @@ function CreateSchedule() {
       {/* <button type='button' onClick={() => { history.push(`weekschedulereview/${(dateFromStr.toFormat('MM-dd-yyyy'))}`) }}>View Schedule</button> */}
       <button type='button' onClick={() => { history.push('/viewweeks/') }}>Weeks Scheduled</button>
 
-      <button type='button' onClick={() => { history.push(`chooseday/${(dateFromStr.toFormat('MM-dd-yyyy'))}`) }}>Accept</button>
+      <button type='button' onClick={() => { history.push(`chooseday/${(dateFromStr.toFormat('MM-dd-yyyy'))}`) }}>Go to Schedule Day</button>
 
     </>
   );
