@@ -23,7 +23,7 @@ import EditEmployee from '../EditEmployee/EditEmployee';
 import ReviewEmployees from '../ReviewEmployees/ReviewEmployees';
 import CreateSchedule from '../CreateSchedule/CreateSchedule';
 import ChooseDay from '../ChooseDay/ChooseDay'
-import ScheduleDay from '../ScheduleDayForm/ScheduleDayForm';
+import ScheduleDayForm from '../ScheduleDayForm/ScheduleDayForm';
 import WeekScheduleReview from '../WeekScheduleReview/WeekScheduleReview';
 import ViewWeekSchedule from '../ViewWeekSchedule/ViewWeekSchedule';
 import ViewWeeks from '../ViewWeeks/ViewWeeks';
@@ -94,14 +94,14 @@ function App() {
             
             <ProtectedRoute
             exact
-            path="/chooseday/:date">
+            path="/chooseday/:date/:date2">
               <ChooseDay />
             </ProtectedRoute>
 
             <ProtectedRoute
             exact
-            path="/scheduleday">
-              <ScheduleDay />
+            path="/scheduledayform/:dayId">
+              <ScheduleDayForm />
             </ProtectedRoute>
 
             <ProtectedRoute

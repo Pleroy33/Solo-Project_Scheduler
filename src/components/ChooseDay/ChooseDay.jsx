@@ -1,7 +1,6 @@
 import React, {useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-
+import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
 // component name TemplateFunction with the name for the new component.
@@ -12,11 +11,12 @@ function ChooseDay() {
   const store = useSelector((store) => store);
   console.log('on ChooseDay Schedule');
   const history = useHistory();
-  
+  const { date, date2 } = useParams();
+  console.log(date, date2)
   return (
     <>
       <div>
-        <h1>Placeholder Weekdate xx/xx/xx to xx/xx/xx</h1>
+        <h1>Week of {date} to {date2}</h1>
 
         <h2>Select Day to Schedule</h2>
 
@@ -24,17 +24,17 @@ function ChooseDay() {
       </div>
 
       <div>
-      <button type='button' onClick={() => { history.push('Sunday') }}>Sunday</button>
-      <button type='button' onClick={() => { history.push('Monday') }}>Monday</button>
-      <button type='button' onClick={() => { history.push('Tuesday') }}>Tuesday</button>
-      <button type='button' onClick={() => { history.push('Wednesday') }}>Wednesday</button>
-      <button type='button' onClick={() => { history.push('Thursday') }}>Thursday</button>
-      <button type='button' onClick={() => { history.push('Friday') }}>Friday</button>
-      <button type='button' onClick={() => { history.push('Saturday') }}>Saturday</button>
+      <button type='button' onClick={() => { history.push('/scheduledayform/1') }}>Sunday</button>
+      <button type='button' onClick={() => { history.push('/scheduledayform/2') }}>Monday</button>
+      <button type='button' onClick={() => { history.push('/scheduledayform/3') }}>Tuesday</button>
+      <button type='button' onClick={() => { history.push('/scheduledayform/4') }}>Wednesday</button>
+      <button type='button' onClick={() => { history.push('/scheduledayform/5') }}>Thursday</button>
+      <button type='button' onClick={() => { history.push('/scheduledayform/6') }}>Friday</button>
+      <button type='button' onClick={() => { history.push('/scheduledayform/7') }}>Saturday</button>
       </div>
 
       <div>
-      <button type='button' onClick={() => { history.push('reviewschedule/{placeholder}') }}>Return to create schedule</button>
+      <button type='button' onClick={() => { history.push('/createschedule') }}>Return to create schedule</button>
 
       </div>
 

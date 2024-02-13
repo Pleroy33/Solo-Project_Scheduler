@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { useHistory,useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { DateTime } from 'luxon';
 
@@ -59,16 +57,7 @@ function CreateSchedule() {
 
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
-  const store = useSelector((store) => store);
-
-  
-
-
-
-  
-
   const history = useHistory();
-
 
 
   return (
@@ -91,7 +80,7 @@ function CreateSchedule() {
       {/* <button type='button' onClick={() => { history.push(`weekschedulereview/${(dateFromStr.toFormat('MM-dd-yyyy'))}`) }}>View Schedule</button> */}
       <button type='button' onClick={() => { history.push('/viewweeks/') }}>Weeks Scheduled</button>
 
-      <button type='button' onClick={() => { history.push(`chooseday/${(dateFromStr.toFormat('MM-dd-yyyy'))}`) }}>Go to Schedule Day</button>
+      <button type='button' onClick={() => { history.push(`chooseday/${(dateFromStr.toFormat('MM-dd-yyyy'))}/${(dateToStr.toFormat('MM-dd-yyyy'))}`) }}>Go to Schedule Day</button>
 
     </>
   );
