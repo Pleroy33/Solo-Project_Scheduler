@@ -2,14 +2,14 @@ import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 
 
-function EmployeeDetail({employee}) {
+function ViewEmployeeDetail({employee}) {
     const dispatch = useDispatch();
     const history = useHistory();
 
     console.log('employee:', employee )
 
     const handleDeleteEmployee =(id) => { 
-        console.log('inside handleDeleteEmplyee')
+        console.log('inside handleDeleteEmployee')
         dispatch({type: 'DELETE_EMPLOYEE', payload: id})
        }
        const setEditEmployee = () => {
@@ -30,4 +30,4 @@ return (
     </tr>
 )
 }
-export default EmployeeDetail
+export default ViewEmployeeDetail

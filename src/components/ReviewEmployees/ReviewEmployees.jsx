@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import EmployeeDetail from "../EmployeeDetail/EmployeeDetail";
+import ViewEmployeeDetail from "../ViewEmployeeDetail/ViewEmployeeDetail";
 
 function ReviewEmployees() {
     console.log("inside reviewEmployees")
@@ -51,7 +51,7 @@ function ReviewEmployees() {
   <tbody>
     {employees.map(employee => {
         return (
-          <EmployeeDetail key={employee.id} employee={employee} />
+          <ViewEmployeeDetail key={employee.id} employee={employee} />
         )
       //   return(<tr key={employee.id}>
       //    <td>{employee.first_name}</td>
