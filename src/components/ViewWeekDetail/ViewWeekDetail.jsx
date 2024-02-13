@@ -11,7 +11,7 @@ const handleViewWeekOnClick = () => {
     history.push(`/viewweekschedule/${week.id}`)
 
 }
-    console.log('Weekof:', week.id )
+    console.log('Weekof:', week.start_week)
 
     
 

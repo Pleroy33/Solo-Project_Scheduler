@@ -10,14 +10,14 @@ function ScheduleDay(props) {
   // a default value of 'Functional Component'
   const store = useSelector((store) => store);
   const history = useHistory();
-  const [heading, setHeading] = useState('Functional Component');
+  // const [heading, setHeading] = useState('Functional Component');
   const [input, setInput] = useState({first_name: '', start_time: '', end_time: ''})
   const handleSubmit = (event) => {
     event.preventDefault();
     
     // dispatch({ type: "POST_SHIFT", payload: input})
     // setInput({first_name: '', start_time: '', end_time: ''})
-    history.push('/weekschedulereview')
+    history.push('/viewweekschedule/:id')
 }
 
   return (

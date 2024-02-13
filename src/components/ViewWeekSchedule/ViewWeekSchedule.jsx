@@ -8,7 +8,7 @@ function ViewWeekSchedule() {
     const dispatch = useDispatch();
     const history = useHistory()
     const week = useSelector(store => store.setOneWeek)
-    
+
     useEffect(() => {
         dispatch({
             type: 'FETCH_ONE_WEEK', payload: id
@@ -23,7 +23,7 @@ function ViewWeekSchedule() {
 
     return (
         <div>
-            <h1>Shifts For Week {week[0].start_week}</h1>
+            <h1>Shifts For Week {week[0]?.start_week}</h1>
             <section className="employeeList">
 
                 <table>
@@ -38,17 +38,18 @@ function ViewWeekSchedule() {
                             <th scope='col'>Delete Shift</th>
                         </tr>
                     </thead>
-                    {/* <tbody>
-                        {week.map(employee => {
-        return (
-          <EmployeeDetail key={employee.id} employee={employee} />
-        )
-      
-       
-    })}
+                    <tbody>
+                        <tr>
+                            <td>placeholder.firstname</td>
+                            <td>placeholder.last_name</td>
+                            <td>placeholder.day</td>
+                            <td>placeholder.starttime</td>
+                            <td>placeholder.endtime</td>
+                            <td><button onClick={'setEditShift'}>Edit Shift</button></td>
+                            <td><button onClick={() => handleShift('placeholder.id')} >Delete Shift</button></td>
+                        </tr>
 
-
-                    </tbody> */}
+                    </tbody>
                 </table>
             </section>
 
