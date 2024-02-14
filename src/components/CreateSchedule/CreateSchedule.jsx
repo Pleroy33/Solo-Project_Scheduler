@@ -1,10 +1,15 @@
 import { useHistory,useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { DateTime } from 'luxon';
+import { useDispatch } from 'react-redux';
 
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
 // component name TemplateFunction with the name for the new component.
 function CreateSchedule() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+
   const moment = DateTime.local()
   console.log('moment:', moment)
   const yearNumber = moment.localWeekYear
@@ -48,16 +53,21 @@ function CreateSchedule() {
   const dateToStr4 = dt4.endOf('week', {useLocaleWeeks: true});
   const dateFromStr5 = dt5.startOf('week', {useLocaleWeeks: true});
   const dateToStr5 = dt5.endOf('week', {useLocaleWeeks: true});
+  console.log(dateFromStr.toISODate())
 
+  const postWeek =()=>{
+    console.log(dateFromStr.toSQLDate())
 
-
+    dispatch({type: 'POST_WEEK', payload: {start_week : dateFromStr.toSQLDate()}})
+    history.push(`chooseday/${(dateFromStr.toFormat('MM-dd-yyyy'))}/${(dateToStr.toFormat('MM-dd-yyyy'))}/`) 
+  }
+  
 
 
 
 
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
-  const history = useHistory();
 
 
   return (
@@ -80,7 +90,7 @@ function CreateSchedule() {
       {/* <button type='button' onClick={() => { history.push(`weekschedulereview/${(dateFromStr.toFormat('MM-dd-yyyy'))}`) }}>View Schedule</button> */}
       <button type='button' onClick={() => { history.push('/viewweeks/') }}>Weeks Scheduled</button>
 
-      <button type='button' onClick={() => { history.push(`chooseday/${(dateFromStr.toFormat('MM-dd-yyyy'))}/${(dateToStr.toFormat('MM-dd-yyyy'))}`) }}>Go to Schedule Day</button>
+      <button type='button' onClick={postWeek}>Go to Schedule Day</button>
 
     </>
   );

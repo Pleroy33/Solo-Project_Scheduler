@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
-import {useSelector} from 'react-redux';
+import { useState, useEffect } from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
 // component name TemplateFunction with the name for the new component.
 function ScheduleDay(props) {
+  
+  const employees = useSelector((store) => store.employees);
+  const history = useHistory();
+  const dispatch = useDispatch();
+
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
-  const store = useSelector((store) => store);
-  const history = useHistory();
+  
+
+console.log('notes',employees)
+  
   // const [heading, setHeading] = useState('Functional Component');
   const [input, setInput] = useState({first_name: '', start_time: '', end_time: ''})
   const handleSubmit = (event) => {
@@ -32,17 +39,33 @@ function ScheduleDay(props) {
             <div className='Shift-form'>
                 <form onSubmit={handleSubmit}>
                     <input type="text" placeholder='First Name' value={input.first_name} onChange={(event)=> setInput({...input, first_name: event.target.value})} />
-                    <input type="text" placeholder='Start Shift' value={input.start_shift} onChange={(event) => setInput({...input, start_shift: event.target.value})} />
-                    <input type="text" placeholder='End Shift' value={input.end_shift} onChange={(event) => setInput({...input, end_shift: event.target.value})}/>
+                    <input type="text" placeholder='First Name' value={input.last_name} onChange={(event)=> setInput({...input, last_name: event.target.value})} />
+                    <input type="time"  placeholder='Start Shift' value={input.start_shift} onChange={(event) => setInput({...input, start_shift: event.target.value})} />
+                    <input type="time" placeholder='End Shift' value={input.end_shift} onChange={(event) => setInput({...input, end_shift: event.target.value})}/>
 
                     <button type ='submit'>Accept Shift</button>
                 </form>
             </div>
             <div>
               <h4>Employee Notes</h4>
+
+            <table>
+                 {employees.map(employee => {
+                 
+                    
+                  
+                  return(<tr key={employee.id}>
+                   <td>{employee.first_name}</td>
+                   <td>{employee.last_name}</td>
+                   <td>{employee.notes}</td>
+                 </tr>
+                 
+                  )
+              })}
+              </table>
             </div>
             <div>
-            <button type ='button' onClick={()=>{history.push('chooseday')}}>Back to Select Day</button> 
+            <button type ='button' onClick={()=>{history.push('/chooseday/')}}>Back to Select Day</button> 
             </div>
             </div>
 </>

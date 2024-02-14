@@ -20,9 +20,21 @@ function* getOneWeek(action) {
         console.log('getOneEmployee Error,',error)
     }
 }
+
+function* postStartWeek(action) {
+    console.log('in postStartWeek', action.payload)
+    try { 
+        const start = yield axios.post('api/scheduleweek', action.payload)
+        yield put ({ type: 'CREATE_WEEK', payload: start})
+    } catch (error) {
+        console.log('postStartWeek error', error)
+    }
+
+}
 function* weeksSaga() {
     yield takeLatest('FETCH_WEEKS', fetchAllWeeks)
     yield takeLatest('FETCH_ONE_WEEK', getOneWeek)
+    yield takeLatest('POST_WEEK', postStartWeek )
     
 }
 

@@ -1,6 +1,7 @@
 import React, {useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { DateTime } from 'luxon';
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
 // component name TemplateFunction with the name for the new component.
@@ -8,8 +9,16 @@ function ChooseDay() {
   
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
-  const store = useSelector((store) => store);
+  const store = useSelector((store) => store.createWeek.data[0].id);
+  
+  const dispatch = useDispatch();
+  useEffect(()=> {
+    dispatch({
+        type:'FETCH_EMPLOYEES'})
+},[])
+
   console.log('on ChooseDay Schedule');
+  console.log('store', store)
   const history = useHistory();
   const { date, date2 } = useParams();
   console.log(date, date2)
