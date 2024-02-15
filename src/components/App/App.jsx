@@ -25,9 +25,9 @@ import CreateSchedule from '../CreateSchedule/CreateSchedule';
 import ChooseDay from '../ChooseDay/ChooseDay'
 import ScheduleDayForm from '../ScheduleDayForm/ScheduleDayForm';
 import WeekScheduleReview from '../WeekScheduleReview/WeekScheduleReview';
-import ViewWeekSchedule from '../ViewWeekDetail/ViewWeekDetail';
+import ViewWeekSchedule from '../ViewWeekSchedule/ViewWeekSchedule';
 import ViewWeeks from '../ViewWeeks/ViewWeeks';
-import ViewWeekDetail from '../ViewWeek/ViewWeek';
+import ViewWeekDetail from '../ViewWeeksDetail/ViewWeeksDetail';
 import EditShift from '../EditShift/EditShift';
 import './App.css';
 

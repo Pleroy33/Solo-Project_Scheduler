@@ -9,7 +9,7 @@ function ChooseDay() {
   
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
-  const store = useSelector((store) => store.createWeek.data[0].id);
+  const store = useSelector((store) => store.createWeek);
   
   const dispatch = useDispatch();
   useEffect(()=> {
@@ -22,6 +22,9 @@ function ChooseDay() {
   const history = useHistory();
   const { date, date2 } = useParams();
   console.log(date, date2)
+
+  
+
   return (
     <>
       <div>
@@ -33,13 +36,14 @@ function ChooseDay() {
       </div>
 
       <div>
-      <button type='button' onClick={() => { history.push('/scheduledayform/1') }}>Sunday</button>
-      <button type='button' onClick={() => { history.push('/scheduledayform/2') }}>Monday</button>
-      <button type='button' onClick={() => { history.push('/scheduledayform/3') }}>Tuesday</button>
-      <button type='button' onClick={() => { history.push('/scheduledayform/4') }}>Wednesday</button>
-      <button type='button' onClick={() => { history.push('/scheduledayform/5') }}>Thursday</button>
-      <button type='button' onClick={() => { history.push('/scheduledayform/6') }}>Friday</button>
-      <button type='button' onClick={() => { history.push('/scheduledayform/7') }}>Saturday</button>
+
+      <button type='button' value ='Sunday' onClick={() => { history.push('/scheduledayform/1') }}>Sunday</button>
+      <button type='button' value = 'Monday' onClick={() => { history.push('/scheduledayform/2') }}>Monday</button>
+      <button type='button' value = 'Tuesday' onClick={() => { history.push('/scheduledayform/3') }}>Tuesday</button>
+      <button type='button' value ='Wednesday' onClick={() => { history.push('/scheduledayform/4') }}>Wednesday</button>
+      <button type='button' value = 'Thursday' onClick={() => { history.push('/scheduledayform/5') }}>Thursday</button>
+      <button type='button' value = 'Friday' onClick={() => { history.push('/scheduledayform/6') }}>Friday</button>
+      <button type='button' value = 'Saturday' onClick={() => { history.push('/scheduledayform/7') }}>Saturday</button>
       </div>
 
       <div>

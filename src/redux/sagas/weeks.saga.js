@@ -17,7 +17,7 @@ function* getOneWeek(action) {
         const week = yield axios.get(`api/scheduleweek/${action.payload}`)
         yield put({ type: "SET_ONE_WEEK", payload: week.data })
     } catch (error) {
-        console.log('getOneEmployee Error,',error)
+        console.log('getOneWeek Error,',error)
     }
 }
 

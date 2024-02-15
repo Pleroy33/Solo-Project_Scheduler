@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import ViewWeekDetail from "../ViewWeek/ViewWeek";
+import ViewWeeksDetail from "../ViewWeeksDetail/ViewWeeksDetail";
 
 function ViewWeeks() {
     console.log("inside ViewWeeks Component")
@@ -34,7 +34,7 @@ function ViewWeeks() {
                     <tbody>
                         {weeks.map(week => {
                             return (
-                                <ViewWeekDetail key={week.id} week={week} />
+                                <ViewWeeksDetail key={week.id} week={week} />
                             )
                         })}
 

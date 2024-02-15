@@ -87,7 +87,7 @@ router.get('/:id', (req, res) => {
                 res.send(result.rows);
             })
             .catch(err => {
-                console.log('Error getting employees', err)
+                console.log('Error getting one week', err)
                 res.sendStatus(500)
             })
     } else {

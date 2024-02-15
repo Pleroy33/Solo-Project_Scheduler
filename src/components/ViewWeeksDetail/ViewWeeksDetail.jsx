@@ -5,7 +5,12 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 function ViewWeekDetail({week}) {
     const dispatch = useDispatch();
     const history = useHistory();
-    
+    // useEffect(() => {
+    //     dispatch({
+    //         // type: 'FETCH_ONE_WEEK', payload: id,
+    //         type: 'FETCH_SHIFTS' , payload: id
+    //     })
+    // }, [])
     
 const handleViewWeekOnClick = () => {
     console.log('inside viewweek click', week.id)
@@ -17,8 +22,7 @@ const handleViewWeekOnClick = () => {
     
 
 return (
-
-   
+    
     <tr key={week.id}>
         <td>{week.start_week}</td>
         <td><button onClick={handleViewWeekOnClick}>View Week</button></td>
