@@ -20,11 +20,11 @@ function ScheduleDay() {
 
 console.log('notes',employees)
 
-
+console.log('dayId as anumber', Number(dayId))
 
   console.log('id', dayId)
   // const [heading, setHeading] = useState('Functional Component');
-  const [input, setInput] = useState({week_id: weekId, day_Id: Number(dayId), first_name: '', start_time: '', end_time: ''})
+  const [input, setInput] = useState({week_id: weekId, day_id: Number(dayId), employee_id: '', start_time: '', end_time: ''})
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('input', input)
@@ -45,7 +45,7 @@ console.log('notes',employees)
                </header>
             <div className='Shift-form'>
                 <form onSubmit={handleSubmit}>
-                    <input type= "textr" placeholder='First Name' value={input.first_name} onChange={(event)=> setInput({...input, first_name: event.target.value})} />
+                    <input type= "text" placeholder='First Name' value={input.first_name} onChange={(event)=> setInput({...input, employee_id: Number(event.target.value)})} />
                     <input type="time"  placeholder='Start Shift' value={input.start_shift} onChange={(event) => setInput({...input, start_time: event.target.value})} />
                     <input type="time" placeholder='End Shift' value={input.end_shift} onChange={(event) => setInput({...input, end_time: event.target.value})}/>
 

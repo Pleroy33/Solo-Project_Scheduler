@@ -6,7 +6,7 @@ function* addShift(action) {
         //send the shift data with a POST request
         const postShift = yield axios.post('api/scheduleshift', action.payload)
         //set the value of the addShift reducer
-        yield put({ type: "FETCH_ONE_WEEK" })
+        yield put({ type: "FETCH_SHIFTS" })
 
 
     } catch (error) {
