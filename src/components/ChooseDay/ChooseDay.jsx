@@ -37,7 +37,7 @@ function ChooseDay() {
 
       <div>
 
-      <button type='button' value ='Sunday' onClick={() => { history.push('/scheduledayform/1') }}>Sunday</button>
+      <button type='button' value ='Sunday' onClick={() => { history.push('/scheduledayform/1/') }}>Sunday</button>
       <button type='button' value = 'Monday' onClick={() => { history.push('/scheduledayform/2') }}>Monday</button>
       <button type='button' value = 'Tuesday' onClick={() => { history.push('/scheduledayform/3') }}>Tuesday</button>
       <button type='button' value ='Wednesday' onClick={() => { history.push('/scheduledayform/4') }}>Wednesday</button>

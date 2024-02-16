@@ -18,21 +18,21 @@ function EditShift() {
     const handleEditFirst = (event) => {
         event.preventDefault();
         console.log('editShift handleEditFirst', event.target.value);
-        dispatch({
+        // dispatch({
 
-            type: 'EDIT_SHIFT',
-            payload: { property: 'first_name', value: event.target.value }
-        })
+        //     type: 'EDIT_SHIFT',
+        //     payload: { property: 'first_name', value: event.target.value }
+        // })
     }
 
-    const handleEditLast = (event) => {
-        event.preventDefault();
-        console.log('editShift handleEditLast', event.target.value);
-        dispatch({
-            type: 'EDIT_SHIFT',
-            payload: { property: 'last_name', value: event.target.value }
-        })
-    }
+    // const handleEditLast = (event) => {
+    //     event.preventDefault();
+    //     console.log('editShift handleEditLast', event.target.value);
+    //     dispatch({
+    //         type: 'EDIT_SHIFT',
+    //         payload: { property: 'last_name', value: event.target.value }
+    //     })
+    // }
 
 
     const handleEditDay = (event) => {

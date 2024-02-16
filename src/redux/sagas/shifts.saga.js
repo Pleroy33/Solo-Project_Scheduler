@@ -6,7 +6,7 @@ function* addShift(action) {
         //send the shift data with a POST request
         const postShift = yield axios.post('api/scheduleshift', action.payload)
         //set the value of the addShift reducer
-        yield put({ type: "FETCH_SHIFTS" })
+        yield put({ type: "FETCH_SHIFTS", payload: action.payload.week_id })
 
 
     } catch (error) {
@@ -15,7 +15,7 @@ function* addShift(action) {
 }
 
 function* getOneWeekShifts(action) {
-    console.log('in getOneWeekShifts', action)
+    console.log('in getOneWeekShifts TEST', action.payload)
     try {
         const shifts  = yield axios.get(`api/scheduleshift/${action.payload}`)
         yield put({ type: "SET_SHIFTS" ,payload: shifts.data })

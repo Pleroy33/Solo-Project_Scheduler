@@ -39,12 +39,12 @@ router.post('/', (req, res) => {
     const newWeek = req.body; //settting req.body to an alias 
     const user = req.user
     if (req.isAuthenticated()) {
-        const sqlText = `
-      INSERT INTO "weeks" 
-      ("start_week", "user_id")
-      VALUES ($1, $2)
-      RETURNING id, start_week;
-      `;
+        const sqlText =`
+        INSERT INTO "weeks" 
+        ("start_week", "user_id")
+        VALUES ($1, $2)
+        RETURNING id, start_week;
+        `;
         const queryParams = [
             newWeek.start_week,
             user.id
@@ -70,6 +70,7 @@ router.get('/:id', (req, res) => {
     console.log('in employee get by id route')
     console.log('isAuthenicated', req.isAuthenticated)
     console.log('user,', req.user)
+    console.log('req.params.id', req.params.id)
     if (req.isAuthenticated()) {
         const weekId = req.params.id
         const queryParams = [
@@ -98,3 +99,11 @@ router.get('/:id', (req, res) => {
 
 
 module.exports = router;
+
+
+
+// WHERE 
+// NOT EXISTS (
+//   SELECT "start_week" FROM "weeks"
+//   WHERE "start_week" = $1
+// )

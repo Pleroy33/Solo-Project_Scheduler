@@ -30,8 +30,12 @@ import ViewWeeks from '../ViewWeeks/ViewWeeks';
 import ViewWeekDetail from '../ViewWeeksDetail/ViewWeeksDetail';
 import EditShift from '../EditShift/EditShift';
 import './App.css';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterLuxon } from '@mui/x-date-pickers/AdapterLuxon'
 
-function App() {
+
+
+function App({ children }) {
   const dispatch = useDispatch();
 
   const user = useSelector(store => store.user);
@@ -41,6 +45,8 @@ function App() {
   }, [dispatch]);
 
   return (
+    <LocalizationProvider dateAdapter={AdapterLuxon}>
+       {children}
     <Router>
       <div>
         <Nav />
@@ -101,7 +107,7 @@ function App() {
 
           <ProtectedRoute
             exact
-            path="/scheduledayform/:dayId">
+            path="/scheduledayform/:dayId/">
             <ScheduleDayForm />
           </ProtectedRoute>
 
@@ -196,6 +202,8 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </LocalizationProvider>
+
   );
 }
 

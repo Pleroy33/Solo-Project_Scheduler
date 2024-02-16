@@ -10,16 +10,16 @@ function ViewWeekScheduleDetail({ shift,id }) {
     console.log('id', id)
 
     const handleDeleteShift =(shift, id) => { 
-        console.log('inside handleDeleteEmplyee')
+        console.log('inside handleDeleteShift')
         dispatch({type: 'DELETE_SHIFT', payload: shift, id:id})
     }
        
-    //    const setEditEmployee = () => {
-    //     console.log('inside handleEditEmployee',employee)
-    //     dispatch({type: 'SET_EDIT_EMPLOYEE', payload: employee})
-    //     history.push('/editemployee')
+       const setEditShift = (e) => {
+        console.log('inside handleEditShift',shift)
+        // dispatch({type: 'SET_EDIT_EMPLOYEE', payload: employee})
+        // history.push('/editemployee')
 
-    // }
+    }
 
     return (
 
@@ -30,8 +30,8 @@ function ViewWeekScheduleDetail({ shift,id }) {
             <td>{shift.weekday}</td>
             <td>{shift.start_time}</td>
             <td>{shift.end_time}</td>
-            {/* <td><button onClick={setEditShift}>Edit Shift</button></td> */}
-            <td><button onClick={() => handleDeleteShift(shift.id,id)} >Delete Employee</button></td>
+            <td><button onClick={setEditShift}>Edit Shift</button></td>
+            <td><button onClick={() => handleDeleteShift(shift.id,id)} >Delete Shift</button></td>
 
         </tr>
 

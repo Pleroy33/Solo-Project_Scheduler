@@ -11,14 +11,17 @@ function ViewWeekSchedule() {
     const week = useSelector((store) => store.setOneWeek)
     const shifts = useSelector((store) => store.shifts)
     console.log('shifts:', shifts)
+
+    console.log('id:', id)
     useEffect(() => {
+
         dispatch({
-            // type: 'FETCH_ONE_WEEK', payload: id,
-            type: 'FETCH_SHIFTS' , payload: id
+
+            type: 'FETCH_SHIFTS', payload: id
         })
     }, [])
 
-    
+
 
 
 
@@ -26,7 +29,7 @@ function ViewWeekSchedule() {
     return (
         <div>
             <h1>Shifts For Week {shifts[0]?.start_week}</h1>
-            <section className="employeeList">
+            <section className="shiftList">
 
                 <table>
                     <thead>
@@ -41,25 +44,23 @@ function ViewWeekSchedule() {
                     </thead>
                     <tbody>
 
-                    {shifts.map(shift => {
-        return (
-          <ViewWeekScheduleDetail key={shift.id} shift={shift} id={id}/>
-        )
-      //   return(<tr key={employee.id}>
-      //    <td>{employee.first_name}</td>
-      //    <td>{employee.last_name}</td>
-        //  <td><button onClick={(event) => handleEditEmployee(event.target.value)} value={employee}>Edit Employee</button></td>
-        //  <td><button onClick={(event) => handleDeleteEmployee(event.target.value)} value={employee.id}>Delete Employee</button></td>
-      //  </tr>
-       
-    })}
-                       
+                        {shifts.map(shift => {
+                            return (
+                                <ViewWeekScheduleDetail key={shift.id} shift={shift} id={id} />
+                            )
+
+                        })}
+
 
                     </tbody>
+                    <div>
+                    <button type='button' onClick={() => { history.push(`/chooseday/02-11-2024/02-17-2024/`) }}>Back to Select Day</button>
+                    <button type='button' onClick={() => { history.push('/createschedule') }}>Return to create schedule</button>
+
+                    </div>
                 </table>
             </section>
 
-            {/* <button type='button' onClick={() => { history.push('addemployee') }}>Add Another Employee</button>  <button type='button' onClick={() => { history.push('createschedule') }}>Accept</button> */}
         </div>
     )
 
