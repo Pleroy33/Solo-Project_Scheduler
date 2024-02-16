@@ -30,8 +30,8 @@ function ViewWeekScheduleDetail({ shift,id }) {
             <td>{shift.weekday}</td>
             <td>{shift.start_time}</td>
             <td>{shift.end_time}</td>
-            <td><button onClick={setEditShift}>Edit Shift</button></td>
-            <td><button onClick={() => handleDeleteShift(shift.id,id)} >Delete Shift</button></td>
+            <td><button className='btn' onClick={setEditShift}>Edit Shift</button></td>
+            <td><button className='btn' onClick={() => handleDeleteShift(shift.id,id)} >Delete Shift</button></td>
 
         </tr>
 

@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
+import {DateTime}  from "luxon"
 
 
 function ViewWeekDetail({week}) {
@@ -19,12 +20,12 @@ const handleViewWeekOnClick = () => {
 }
     console.log('Weekof:', week.start_week)
 
-    
+    const date =DateTime.fromISO(week.start_week).toLocaleString()
 
 return (
     
     <tr key={week.id}>
-        <td>{week.start_week}</td>
+        <td>{date}</td>
         <td><button onClick={handleViewWeekOnClick}>View Week</button></td>
     </tr>
 )

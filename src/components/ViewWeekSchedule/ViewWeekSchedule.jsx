@@ -31,7 +31,7 @@ function ViewWeekSchedule() {
             <h1>Shifts For Week {shifts[0]?.start_week}</h1>
             <section className="shiftList">
 
-                <table>
+                <table className="formPanel">
                     <thead>
                         <tr>
                             <th scope='col'>First Name</th>
@@ -53,12 +53,13 @@ function ViewWeekSchedule() {
 
 
                     </tbody>
+                    </table>
                     <div>
-                    <button type='button' onClick={() => { history.push(`/chooseday/02-11-2024/02-17-2024/`) }}>Back to Select Day</button>
-                    <button type='button' onClick={() => { history.push('/createschedule') }}>Return to create schedule</button>
+                    <button className='btn' type='button' onClick={() => { history.push(`/chooseday/02-11-2024/02-17-2024/`) }}>Back to Select Day</button>
+                    <button className='btn' type='button' onClick={() => { history.push('/createschedule') }}>Return to create schedule</button>
 
                     </div>
-                </table>
+               
             </section>
 
         </div>

@@ -2,13 +2,16 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import ViewWeeksDetail from "../ViewWeeksDetail/ViewWeeksDetail";
+import{ DateTime } from 'luxon'
 
 function ViewWeeks() {
     console.log("inside ViewWeeks Component")
     const dispatch = useDispatch();
     const history = useHistory()
     const weeks = useSelector(store => store.setWeeks)
-    console.log('store.weeks', weeks)
+    const item =  weeks[0]?.start_week
+    console.log('store.weeks', item)
+    console.log('week format', DateTime.fromISO(item).toLocaleString())
 
     useEffect(() => {
         dispatch({

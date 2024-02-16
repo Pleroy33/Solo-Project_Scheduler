@@ -68,7 +68,7 @@ function EditEmployee() {
     return (
 
 
-        <div className='Edit-employee'>
+        <div className='formPanel'>
             <header className='add-employee-header'>
                 <h1>Edit Employee</h1>
             </header>
@@ -76,9 +76,9 @@ function EditEmployee() {
 
             <div className='Employee-form'>
                 <form onSubmit={handleSubmit}>
-                    <input placeholder='First Name' value= {editEmployee.first_name} onChange={(event) => handleEditFirst(event)} />
-                    <input  placeholder='Last Name' value={editEmployee.last_name } onChange={(event) => handleEditLast(event)}/>
-                    <input  placeholder='Employee Notes' value={editEmployee.notes} onChange={(event) => handleEditNotes(event)} />
+                    <input type='text'  placeholder='First Name' value= {editEmployee.first_name} onChange={(event) => handleEditFirst(event)} />
+                    <input  type="text" placeholder='Last Name' value={editEmployee.last_name } onChange={(event) => handleEditLast(event)}/>
+                    <input  type = 'text' placeholder='Employee Notes' value={editEmployee.notes} onChange={(event) => handleEditNotes(event)} />
 
                     <button type='submit'>Accept</button>
                 </form>

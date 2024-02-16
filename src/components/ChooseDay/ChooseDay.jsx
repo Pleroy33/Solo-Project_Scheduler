@@ -37,13 +37,13 @@ function ChooseDay() {
 
       <div>
 
-      <button type='button' value ='Sunday' onClick={() => { history.push('/scheduledayform/1/') }}>Sunday</button>
-      <button type='button' value = 'Monday' onClick={() => { history.push('/scheduledayform/2') }}>Monday</button>
-      <button type='button' value = 'Tuesday' onClick={() => { history.push('/scheduledayform/3') }}>Tuesday</button>
-      <button type='button' value ='Wednesday' onClick={() => { history.push('/scheduledayform/4') }}>Wednesday</button>
-      <button type='button' value = 'Thursday' onClick={() => { history.push('/scheduledayform/5') }}>Thursday</button>
-      <button type='button' value = 'Friday' onClick={() => { history.push('/scheduledayform/6') }}>Friday</button>
-      <button type='button' value = 'Saturday' onClick={() => { history.push('/scheduledayform/7') }}>Saturday</button>
+      <button type='button' value ='Sunday' onClick={() => { history.push(`/scheduledayform/1/Sunday`) }}>Sunday</button>
+      <button type='button' value = 'Monday' onClick={() => { history.push('/scheduledayform/2/Monday') }}>Monday</button>
+      <button type='button' value = 'Tuesday' onClick={() => { history.push('/scheduledayform/3/Tuesday') }}>Tuesday</button>
+      <button type='button' value ='Wednesday' onClick={() => { history.push('/scheduledayform/4/Wednesday') }}>Wednesday</button>
+      <button type='button' value = 'Thursday' onClick={() => { history.push('/scheduledayform/5/Thursday') }}>Thursday</button>
+      <button type='button' value = 'Friday' onClick={() => { history.push('/scheduledayform/6/Friday') }}>Friday</button>
+      <button type='button' value = 'Saturday' onClick={() => { history.push('/scheduledayform/7/Saturday') }}>Saturday</button>
       </div>
 
       <div>

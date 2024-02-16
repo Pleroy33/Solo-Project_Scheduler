@@ -59,7 +59,7 @@ function CreateSchedule() {
     console.log(dateFromStr.toSQLDate())
 
     dispatch({type: 'POST_WEEK', payload: {start_week : dateFromStr.toSQLDate()}})
-    history.push(`chooseday/${(dateFromStr.toFormat('MM-dd-yyyy'))}/${(dateToStr.toFormat('MM-dd-yyyy'))}/`) 
+    history.push(`chooseday/${(dateFromStr3.toFormat('MM-dd-yyyy'))}/${(dateToStr3.toFormat('MM-dd-yyyy'))}/`) 
   }
   
 

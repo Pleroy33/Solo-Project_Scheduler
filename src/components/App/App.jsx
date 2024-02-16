@@ -107,7 +107,7 @@ function App({ children }) {
 
           <ProtectedRoute
             exact
-            path="/scheduledayform/:dayId/">
+            path="/scheduledayform/:dayId/:dayName">
             <ScheduleDayForm />
           </ProtectedRoute>
 

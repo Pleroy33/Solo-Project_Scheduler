@@ -27,11 +27,11 @@ function AddEmployee() {
     }
     return (
         <>
-            <div className='Add-employee'>
+            <div className='formPanel'>
                 <header className='Add-employee-header'>
                     <h1>Add Employee</h1>
                 </header>
-                <div className='Employee-form'>
+                <div className='formPanel'>
                     <form onSubmit={handleSubmit}>
                         <input type="text" placeholder='First Name' value={input.first_name} onChange={(event) => setInput({ ...input, first_name: event.target.value })} />
                         <input type="text" placeholder='Last Name' value={input.last_name} onChange={(event) => setInput({ ...input, last_name: event.target.value })} />

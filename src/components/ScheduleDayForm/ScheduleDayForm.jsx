@@ -16,7 +16,7 @@ function ScheduleDay() {
   const employees = useSelector((store) => store.employees)
   const history = useHistory();
   const dispatch = useDispatch();
-  const { dayId } = useParams();
+  const { dayId,dayName } = useParams();
 
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
@@ -29,21 +29,27 @@ function ScheduleDay() {
   console.log('id', dayId)
   // const [heading, setHeading] = useState('Functional Component');
   const [input, setInput] = useState({ week_id: weekId, day_id: Number(dayId), employee_id: '', start_time: '', end_time: '' })
+  const [selectCatagories, setSelectCatagories] = useState('all')
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('input', input)
+  
+  
 
     dispatch({ type: 'POST_SHIFT', payload: input })
     setInput({ first_name: '', start_time: '', end_time: '' })
     history.push(`/viewweekschedule/${weekId}`)
   }
-
-console.log(input)
+  const setEmployee = (event) =>
+  ({ ...input, employee_id: (event.target.value)})
+  const handleCatagoryChange = (event, newValue) => {
+    setSelectCatagories(newValue)
+console.log(input)}
 
   return (
     <>
       <div>
-        <h1>Day of Week</h1>
+        <h1>{dayName}</h1>
       </div>
       <div className='Add-shift'>
         <header className='Add-shift-header'>
@@ -52,10 +58,10 @@ console.log(input)
         <div className='Shift-form'>
           <form onSubmit={handleSubmit}>
           <ToggleButtonGroup
-          orientation='vertical'
-      value= {employees}
+          orientation='horizontal'
+      value= {selectCatagories}
       exclusive
-      onChange={(event) => setInput({ ...input, employee_id: (event.target.value) })}
+      onChange={(setEmployee, handleCatagoryChange)}
       aria-label="choose-employee">
       {employees.map((employee) => (
         <ToggleButton 
