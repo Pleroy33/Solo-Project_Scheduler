@@ -102,8 +102,3 @@ module.exports = router;
 
 
 
-// WHERE 
-// NOT EXISTS (
-//   SELECT "start_week" FROM "weeks"
-//   WHERE "start_week" = $1
-// )
