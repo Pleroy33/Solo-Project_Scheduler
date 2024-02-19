@@ -29,28 +29,29 @@ function ChooseDay() {
     <>
       <div>
         <h1>Week of {date} to {date2}</h1>
-
+        <div/>
+        <div className='formPanel'>
         <h2>Select Day to Schedule</h2>
 
 
-      </div>
+      
 
       <div>
 
-      <button type='button' value ='Sunday' onClick={() => { history.push(`/scheduledayform/1/Sunday`) }}>Sunday</button>
-      <button type='button' value = 'Monday' onClick={() => { history.push('/scheduledayform/2/Monday') }}>Monday</button>
-      <button type='button' value = 'Tuesday' onClick={() => { history.push('/scheduledayform/3/Tuesday') }}>Tuesday</button>
-      <button type='button' value ='Wednesday' onClick={() => { history.push('/scheduledayform/4/Wednesday') }}>Wednesday</button>
-      <button type='button' value = 'Thursday' onClick={() => { history.push('/scheduledayform/5/Thursday') }}>Thursday</button>
-      <button type='button' value = 'Friday' onClick={() => { history.push('/scheduledayform/6/Friday') }}>Friday</button>
-      <button type='button' value = 'Saturday' onClick={() => { history.push('/scheduledayform/7/Saturday') }}>Saturday</button>
+      <button className='btn' type='button' value ='Sunday' onClick={() => { history.push(`/scheduledayform/1/Sunday`) }}>Sunday</button>
+      <button className='btn' type='button' value = 'Monday' onClick={() => { history.push('/scheduledayform/2/Monday') }}>Monday</button>
+      <button className='btn' type='button' value = 'Tuesday' onClick={() => { history.push('/scheduledayform/3/Tuesday') }}>Tuesday</button>
+      <button className='btn' type='button' value ='Wednesday' onClick={() => { history.push('/scheduledayform/4/Wednesday') }}>Wednesday</button>
+      <button className='btn' type='button' value = 'Thursday' onClick={() => { history.push('/scheduledayform/5/Thursday') }}>Thursday</button>
+      <button className='btn' type='button' value = 'Friday' onClick={() => { history.push('/scheduledayform/6/Friday') }}>Friday</button>
+      <button className='btn' type='button' value = 'Saturday' onClick={() => { history.push('/scheduledayform/7/Saturday') }}>Saturday</button>
       </div>
-
+      </div>
       <div>
-      <button type='button' onClick={() => { history.push('/createschedule') }}>Return to create schedule</button>
+      <button className='btn3' type='button' onClick={() => { history.push('/createschedule') }}>Return to create schedule</button>
 
       </div>
-
+      </div>
     </>
   );
 

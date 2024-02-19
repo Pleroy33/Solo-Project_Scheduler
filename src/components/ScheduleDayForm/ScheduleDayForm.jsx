@@ -37,7 +37,7 @@ function ScheduleDay() {
   
 
     dispatch({ type: 'POST_SHIFT', payload: input })
-    setInput({ first_name: '', start_time: '', end_time: '' })
+    setInput({ start_time: '', end_time: '' })
     history.push(`/viewweekschedule/${weekId}`)
   }
   const setEmployee = (event) =>
@@ -55,20 +55,20 @@ console.log(input)}
         <header className='Add-shift-header'>
           <h1>Add Employee</h1>
         </header>
-        <div className='Shift-form'>
+        <div className='formPanel'>
           <form onSubmit={handleSubmit}>
           <ToggleButtonGroup
           orientation='horizontal'
       value= {selectCatagories}
       exclusive
-      onChange={(setEmployee, handleCatagoryChange)}
+      onChange={(event) => setInput({ ...input, employee_id: (event.target.value) })}
       aria-label="choose-employee">
       {employees.map((employee) => (
         <ToggleButton 
         key = {employee.id}
         value ={employee.id}
         
-        >{employee.first_name}
+        >{employee.first_name} {employee.last_name}
         
         </ToggleButton>
       ))}
@@ -83,18 +83,19 @@ console.log(input)}
 
             {/* <label htmlFor={input.first_name}>Name</label><br />
             <input type="text" name={input.first_name} placeholder='First Name' value={input.first_name} onChange={(event) => setInput({ ...input, employee_id: Number(event.target.value) })} /><br /> */}
-            <br/><label htmlFor={input.start_time}>Start Time</label><br />
-            <input type="time" name={input.start_time} placeholder='Start Shift' value={input.start_shift} onChange={(event) => setInput({ ...input, start_time: event.target.value })} /><br />
-            <label htmlFor={input.end_time}>End Time</label><br />
+            <br/><label htmlFor={input.start_time}>Start Time</label>
+            <input type="time" name={input.start_time} placeholder='Start Shift' value={input.start_shift} onChange={(event) => setInput({ ...input, start_time: event.target.value })} />
+            <label htmlFor={input.end_time}>End Time</label>
             <input type="time" name={input.end_time} placeholder='End Shift' value={input.end_shift} onChange={(event) => setInput({ ...input, end_time: event.target.value })} /><br />
 
-            <button type='submit'>Accept Shift</button>
+            <button className='btn3' type='button' onClick={() => { history.push(`/chooseday/02-11-2024/02-17-2024/`) }}>Back to Select Day</button>      
+ <button className='btn2' type='submit'>Accept Shift</button>
           </form>
-        </div>
+        
         <div>
-          <h4>Employee Notes</h4>
+          <h2>Employee Notes</h2>
 
-          <table>
+          <table className='table'>
             <tbody>
               {employees.map(employee => {
 
@@ -110,10 +111,10 @@ console.log(input)}
               })}
             </tbody>
           </table>
-        </div>
+        
         <div>
-          <button type='button' onClick={() => { history.push(`/chooseday/02-11-2024/02-17-2024/`) }}>Back to Select Day</button>      
-
+</div>
+        </div>
         </div>
       </div>
     </>

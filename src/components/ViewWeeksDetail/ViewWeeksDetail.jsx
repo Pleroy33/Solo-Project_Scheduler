@@ -26,7 +26,7 @@ return (
     
     <tr key={week.id}>
         <td>{date}</td>
-        <td><button onClick={handleViewWeekOnClick}>View Week</button></td>
+        <td><button className = 'btn_delete' onClick={handleViewWeekOnClick}>View Week</button></td>
     </tr>
 )
 }

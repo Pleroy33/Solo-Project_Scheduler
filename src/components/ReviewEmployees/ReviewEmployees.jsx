@@ -65,10 +65,11 @@ function ReviewEmployees() {
   
   </tbody>
 </table>
-</section>
+
 <div className="verticalCenter">
 <button className= 'btn' type ='button' onClick={()=>{history.push('addemployee')}}>Add Another Employee</button>  <button className='btn' type ='button'onClick={()=>{history.push('createschedule')}}>Accept</button>
 </div>
+</section>
 </div>
     )
 

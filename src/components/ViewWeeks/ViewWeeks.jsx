@@ -24,9 +24,9 @@ function ViewWeeks() {
     return (
         <div>
             <h1>Choose Week to view</h1>
-            <section className="weekScheduleList">
+            <section className="formPanel">
 
-                <table>
+                <table className="table">
                     <thead>
                         <tr>
                             <th scope='col'>Week of:</th>
@@ -44,6 +44,8 @@ function ViewWeeks() {
 
                     </tbody>
                 </table>
+                <button className='btn' type='button' onClick={() => { history.push('/createschedule') }}>Return to create schedule</button>
+
             </section>
 
             {/* <button type ='button' onClick={()=>{history.push('addemployee')}}>Add Another Employee</button>  <button type ='button'onClick={()=>{history.push('createschedule')}}>Accept</button> */}

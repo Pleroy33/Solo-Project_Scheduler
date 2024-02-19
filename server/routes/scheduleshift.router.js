@@ -14,12 +14,13 @@ router.get('/:id', (req, res) => {
   if (req.isAuthenticated()) {
     const queryParams = [req.params.id]
       const querytext = `
-      SELECT s.id, w.start_week, d.weekday, e.first_name, start_time, end_time
+      SELECT s.id, d.id, w.start_week, d.weekday, e.first_name, start_time, end_time
       FROM "schedules" s
       JOIN "weeks" w ON w.id = s.week_id
       JOIN "days" d ON s.day_id = d.id
       JOIN "employees" e ON s.employee_id = e.id
-      WHERE s.week_id = $1;
+      WHERE s.week_id = $1
+      ORDER BY d.id ASC;
   `
 
       pool.query(querytext,queryParams)

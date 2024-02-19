@@ -16,7 +16,7 @@ function UserPage() {
   }
 
   return (
-    <div className="container">
+    <div className="formPanel">
       <h2>Hello, {user.username}!</h2>
       <p>Your ID is: {user.id}</p>
       <button className='btn' onClick={handleAddClick}>Add Employee</button>
