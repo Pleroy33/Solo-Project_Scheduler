@@ -23,10 +23,10 @@ return (
 
    
     <tr>
-        <td>{employee.first_name}</td>
+        <td >{employee.first_name}</td>
         <td>{employee.last_name}</td>
-        <td><button onClick={setEditEmployee}>Edit Employee</button></td>
-        <td><button onClick={() => handleDeleteEmployee(employee.id)} >Delete Employee</button></td>
+        <td><button className = 'btn_edit' onClick={setEditEmployee}>Edit Employee</button></td>
+        <td><button className='btn_delete' onClick={() => handleDeleteEmployee(employee.id)} >Delete Employee</button></td>
     </tr>
 )
 }

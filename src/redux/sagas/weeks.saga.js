@@ -17,12 +17,24 @@ function* getOneWeek(action) {
         const week = yield axios.get(`api/scheduleweek/${action.payload}`)
         yield put({ type: "SET_ONE_WEEK", payload: week.data })
     } catch (error) {
-        console.log('getOneEmployee Error,',error)
+        console.log('getOneWeek Error,',error)
     }
+}
+
+function* postStartWeek(action) {
+    console.log('in postStartWeek', action.payload)
+    try { 
+        const start = yield axios.post('api/scheduleweek', action.payload)
+        yield put ({ type: 'CREATE_WEEK', payload: start})
+    } catch (error) {
+        console.log('postStartWeek error', error)
+    }
+
 }
 function* weeksSaga() {
     yield takeLatest('FETCH_WEEKS', fetchAllWeeks)
     yield takeLatest('FETCH_ONE_WEEK', getOneWeek)
+    yield takeLatest('POST_WEEK', postStartWeek )
     
 }
 

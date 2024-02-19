@@ -37,9 +37,9 @@ function ReviewEmployees() {
     return (
     <div>
     <h1>Employee List</h1>
-    <section className="employeeList">
+    <section className="formPanel" >
 
-    <table>
+    <table  className ='table'  >
         <thead>
   <tr>
     <th scope='col'>First Name</th>
@@ -65,9 +65,11 @@ function ReviewEmployees() {
   
   </tbody>
 </table>
-</section>
 
-<button type ='button' onClick={()=>{history.push('addemployee')}}>Add Another Employee</button>  <button type ='button'onClick={()=>{history.push('createschedule')}}>Accept</button>
+<div className="verticalCenter">
+<button className= 'btn' type ='button' onClick={()=>{history.push('addemployee')}}>Add Another Employee</button>  <button className='btn' type ='button'onClick={()=>{history.push('createschedule')}}>Accept</button>
+</div>
+</section>
 </div>
     )
 
