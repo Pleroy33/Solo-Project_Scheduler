@@ -14,7 +14,7 @@ router.get('/:id', (req, res) => {
   if (req.isAuthenticated()) {
     const queryParams = [req.params.id]
       const querytext = `
-      SELECT s.id, d.id, w.start_week, d.weekday, e.first_name, start_time, end_time
+      SELECT s.id, s.day_id, w.start_week, d.weekday, e.first_name, start_time, end_time
       FROM "schedules" s
       JOIN "weeks" w ON w.id = s.week_id
       JOIN "days" d ON s.day_id = d.id
@@ -74,10 +74,12 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-    console.log('in shift DELETE route')
+    console.log('in shift DELETE route', req.params.id)
     if (req.isAuthenticated()) {
         const queryText = `
         DELETE FROM "schedules" 
+
+        
         WHERE "id" = $1;`
         const queryParams = [req.params.id]
 
